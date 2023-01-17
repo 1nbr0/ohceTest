@@ -25,4 +25,12 @@
     <ProjectReference Include="..\OHCE\OHCE.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Utilities\" />
+    <None Remove="Utilities\Builders\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+    <Folder Include="Utilities\Builders\" />
+  </ItemGroup>
 </Project>
