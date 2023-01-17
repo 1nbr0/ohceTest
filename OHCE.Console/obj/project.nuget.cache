@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "A1DAouwEuQw6R6jB8JIZIgOogNjIMzTRDo59nlLKjk49eWq/dxRSIXdYVez26KV7tqMlCWRldE1j1C7Z135j6g==",
+  "success": true,
+  "projectFilePath": "/Users/robinturpin/Develop/workspace_testing/ohceTest/OHCE.Console/OHCE.Console.csproj",
+  "expectedPackageFiles": [
+    "/Users/robinturpin/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.12/microsoft.aspnetcore.app.ref.6.0.12.nupkg.sha512",
+    "/Users/robinturpin/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.12/microsoft.netcore.app.host.osx-arm64.6.0.12.nupkg.sha512",
+    "/Users/robinturpin/.nuget/packages/microsoft.netcore.app.ref/6.0.12/microsoft.netcore.app.ref.6.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}
