@@ -1,16 +1,10 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 
 namespace OHCE;
 
 public class Ohce
 {
-
-    public Ohce()
-    {
-    }
-
-    public string Palindrome(string input)
+    public static string Palindrome(string input)
     {
         var stringBuilder = new StringBuilder();
 
@@ -18,7 +12,10 @@ public class Ohce
             input.Reverse().ToArray()
         );
 
-        stringBuilder.Append(reversed + '\n');
+        stringBuilder.Append(reversed);
+
+        if (reversed.Equals(input))
+            stringBuilder.Append(Expressions.BienDit);
 
         return stringBuilder.ToString();
     }
