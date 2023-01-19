@@ -34,4 +34,20 @@ public class OhceTest
             palindrome + Expressions.BienDit,
             sortie);
     }
+
+    [Fact(DisplayName = "QUAND l'app démarre " +
+                    "ALORS \"Bonjour\" est envoyé ")]
+    public void DémarrageTest()
+    {
+        // QUAND l'app démarre
+        // ALORS "Bonjour" est envoyé
+    }
+
+    [Fact(DisplayName = "QUAND l'app se ferme " +
+                    "ALORS \"Au revoir\" est envoyé ")]
+    public void FermetureTest()
+    {
+        // QUAND l'app se ferme
+        // ALORS "Au revoir" est envoyé
+    }
 }
