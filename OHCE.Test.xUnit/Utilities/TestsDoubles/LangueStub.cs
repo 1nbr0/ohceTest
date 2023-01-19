@@ -1,8 +1,6 @@
 ﻿namespace OHCE.Test.xUnit.Utilities.TestDoubles
 {
-    internal class LangueStub : ILangue
+    internal class LangueStub : LangueMock
     {
-        /// <inheritdoc />
-        public string BienDit => string.Empty;
     }
 }

@@ -2,12 +2,10 @@
 {
     internal class LangueMock : ILangue
     {
-        /// <inheritdoc />
-        public string BienDit { get; }
+        public string BienDit { get; init; } = string.Empty;
 
-        public LangueMock(string bienDit)
-        {
-            BienDit = bienDit;
-        }
+        public string Bonjour { get; init; } = string.Empty;
+
+        public string AuRevoir { get; init; } = string.Empty;
     }
 }

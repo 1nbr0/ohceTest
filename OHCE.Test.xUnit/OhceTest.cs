@@ -27,7 +27,7 @@ public class OhceTest
     [InlineData("Well said")]
     public void PalindromeTest(string bienDit)
     {
-        var ohce = new Ohce(new LangueMock(bienDit));
+        var ohce = new Ohce(new LangueMock { BienDit = bienDit });
         // QUAND on entre un palindrome
         const string palindrome = "sonos";
         var sortie = ohce.Palindrome(palindrome);
@@ -39,18 +39,21 @@ public class OhceTest
             sortie);
     }
 
-    //[Fact(DisplayName = "QUAND l'app démarre " +
-    //                "ALORS \"{Expressions.Bonjour}\" est envoyé ")]
-    //public void DémarrageTest()
-    //{
-    //    var ohce = new Ohce();
+    [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
+                          "QUAND l'app démarre " +
+                          "ALORS <bonjour> de cette langue est envoyé")]
+    [InlineData("Bonjour")]
+    [InlineData("Hello")]
+    public void DémarrageTest(string bonjour)
+    {
+        var ohce = new Ohce(new LangueMock { Bonjour = bonjour });
 
-    //    // QUAND l'app démarre
-    //    var sortie = ohce.Palindrome(string.Empty);
+        // QUAND l'app démarre
+        var sortie = ohce.Palindrome(string.Empty);
 
-    //    // ALORS "Bonjour" est envoyé
-    //    Assert.StartsWith(Expressions.Bonjour, sortie);
-    //}
+        // ALORS "Bonjour" est envoyé
+        Assert.StartsWith(bonjour, sortie);
+    }
 
     //[Fact(DisplayName = "QUAND l'app se ferme " +
     //                "ALORS \"{Expressions.AuRevoir}\" est envoyé ")]
