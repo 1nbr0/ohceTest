@@ -8,8 +8,18 @@ namespace OHCE
 {
     public static class Expressions
     {
-        public const string BienDit = "Bien dit";
-        public const string Bonjour = "Bonjour";
-        public const string AuRevoir = "Au revoir";
+        public static class Français
+        {
+            public const string BienDit = "Bien dit !";
+            public const string Bonjour = "Bonjour :)";
+            public const string AuRevoir = "Au revoir...";
+        }
+
+        public static class English
+        {
+            public const string BienDit = "Well said !";
+            public const string Bonjour = "Hello :)";
+            public const string AuRevoir = "Goodbye...";
+        }
     }
 }

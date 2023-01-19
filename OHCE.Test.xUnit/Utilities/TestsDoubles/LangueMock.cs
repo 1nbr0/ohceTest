@@ -1,6 +1,6 @@
 ﻿namespace OHCE.Test.xUnit.Utilities.TestDoubles
 {
-    internal class LangueMock : ILangue
+    internal record LangueMock : ILangue
     {
         public string BienDit { get; init; } = string.Empty;
 

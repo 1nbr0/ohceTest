@@ -1,4 +1,5 @@
-﻿using OHCE.Test.xUnit.Utilities.TestDoubles;
+﻿using OHCE.Test.xUnit.Utilities.Builders;
+using OHCE.Test.xUnit.Utilities.TestDoubles;
 using Xunit;
 
 namespace OHCE.Test.xUnit;
@@ -10,7 +11,7 @@ public class OhceTest
         "ALORS elle est renvoyée en miroir")]
     public void MiroirTest()
     {
-        var ohce = new Ohce(new LangueStub());
+        var ohce = OhceBuilder.Default;
 
         // QUAND on entre une chaîne de caractère
         var sortie = ohce.Palindrome("lolo");
@@ -23,10 +24,11 @@ public class OhceTest
                           "QUAND on entre un palindrome " +
                           "ALORS il est renvoyé " +
                           "ET <bienDit> de cette langue est envoyé")]
-    [InlineData(Expressions.BienDit)]
-    [InlineData("Well said")]
+    [InlineData(Expressions.Français.BienDit)]
+    [InlineData(Expressions.English.BienDit)]
     public void PalindromeTest(string bienDit)
     {
+        // ETANT DONNE un utilisateur parlant une <langue>
         var ohce = new Ohce(new LangueMock { BienDit = bienDit });
         // QUAND on entre un palindrome
         const string palindrome = "sonos";
@@ -46,6 +48,7 @@ public class OhceTest
     [InlineData("Hello")]
     public void DémarrageTest(string bonjour)
     {
+        // ETANT DONNE un utilisateur parlant une <langue>
         var ohce = new Ohce(new LangueMock { Bonjour = bonjour });
 
         // QUAND l'app démarre
@@ -62,6 +65,7 @@ public class OhceTest
     [InlineData("Goodbye")]
     public void FermetureTest(string auRevoir)
     {
+        // ETANT DONNE un utilisateur parlant une <langue>
         var ohce = new Ohce(new LangueMock { AuRevoir = auRevoir });
 
         // QUAND l'app démarre
