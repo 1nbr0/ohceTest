@@ -1,6 +1,4 @@
-﻿using OHCE.Test.xUnit.Utilities;
-using OHCE.Test.xUnit.Utilities.Builders;
-using Xunit;
+﻿using Xunit;
 
 namespace OHCE.Test.xUnit;
 
@@ -11,10 +9,10 @@ public class OhceTest
         "ALORS elle est renvoyée en miroir")]
     public void MiroirTest()
     {
-        var ohce = OhceBuilder.Default;
+        var ohce = new Ohce();
 
         // QUAND on entre une chaîne de caractère
-        var sortie = ohce.Palindrome("lolo");
+        var sortie = Ohce.Palindrome("lolo");
 
         // ALORS elle est renvoyée en miroir
         Assert.Contains("olol", sortie);
@@ -25,10 +23,15 @@ public class OhceTest
                         "ET \"Bien dit\" est envoyé ensuite")]
     public void PalindromeTest()
     {
+        var ohce = new Ohce();
         // QUAND on entre un palindrome
+        const string palindrome = "sonos";
+        var sortie = Ohce.Palindrome(palindrome);
 
         // ALORS il est renvoyé
-
         // ET "Bien dit" est envoyé
+        Assert.Contains(
+            palindrome + Expressions.BienDit,
+            sortie);
     }
 }

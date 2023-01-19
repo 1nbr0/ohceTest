@@ -1,6 +1,6 @@
 ﻿using OHCE;
-using OHCE.Console;
 
-var ohce = new Ohce(new SystemLangue());
+//var ohce = new Ohce();
 
-Console.WriteLine(ohce.Palindrome(Console.ReadLine() ?? string.Empty));
+//Console.WriteLine(Ohce.Palindrome(Console.ReadLine() ?? string.Empty));
+Console.WriteLine("Hello World");
