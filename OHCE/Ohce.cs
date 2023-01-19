@@ -4,7 +4,14 @@ namespace OHCE;
 
 public class Ohce
 {
-    public static string Palindrome(string input)
+    private readonly ILangue _langue;
+
+    public Ohce(ILangue langue)
+    {
+        _langue = langue;
+    }
+
+    public string Palindrome(string input)
     {
         var stringBuilder =
             new StringBuilder(Expressions.Bonjour);
@@ -16,7 +23,7 @@ public class Ohce
         stringBuilder.Append(reversed);
 
         if (reversed.Equals(input))
-            stringBuilder.Append(Expressions.BienDit);
+            stringBuilder.Append(_langue.BienDit);
 
         stringBuilder.Append(Expressions.AuRevoir);
 

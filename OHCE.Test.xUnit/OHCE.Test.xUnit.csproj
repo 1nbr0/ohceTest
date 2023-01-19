@@ -28,9 +28,11 @@
   <ItemGroup>
     <None Remove="Utilities\" />
     <None Remove="Utilities\Builders\" />
+    <None Remove="Utilities\TestsDoubles\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Utilities\" />
     <Folder Include="Utilities\Builders\" />
+    <Folder Include="Utilities\TestsDoubles\" />
   </ItemGroup>
 </Project>
