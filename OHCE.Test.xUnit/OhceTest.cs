@@ -55,16 +55,19 @@ public class OhceTest
         Assert.StartsWith(bonjour, sortie);
     }
 
-    //[Fact(DisplayName = "QUAND l'app se ferme " +
-    //                "ALORS \"{Expressions.AuRevoir}\" est envoyé ")]
-    //public void FermetureTest()
-    //{
-    //    var ohce = new Ohce();
+    [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
+                          "QUAND l'app se ferme " +
+                          "ALORS <auRevoir> dans cette langue est envoyé")]
+    [InlineData("Au revoir")]
+    [InlineData("Goodbye")]
+    public void FermetureTest(string auRevoir)
+    {
+        var ohce = new Ohce(new LangueMock { AuRevoir = auRevoir });
 
-    //    // QUAND l'app démarre
-    //    var sortie = Ohce.Palindrome(string.Empty);
+        // QUAND l'app démarre
+        var sortie = ohce.Palindrome(string.Empty);
 
-    //    // ALORS "Au revoir" est envoyé
-    //    Assert.EndsWith(Expressions.AuRevoir, sortie);
-    //}
+        // ALORS "Au revoir" est envoyé
+        Assert.EndsWith(auRevoir, sortie);
+    }
 }
