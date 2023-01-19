@@ -20,7 +20,7 @@ public class OhceTest
 
     [Fact(DisplayName = "QUAND on saisi un palindrome " +
                         "ALORS celui-ci est renvoyé " +
-                        "ET \"Bien dit\" est envoyé ensuite")]
+                        "ET \"{Expressions.BienDit}\" est envoyé ensuite")]
     public void PalindromeTest()
     {
         var ohce = new Ohce();
@@ -36,18 +36,28 @@ public class OhceTest
     }
 
     [Fact(DisplayName = "QUAND l'app démarre " +
-                    "ALORS \"Bonjour\" est envoyé ")]
+                    "ALORS \"{Expressions.Bonjour}\" est envoyé ")]
     public void DémarrageTest()
     {
+        var ohce = new Ohce();
+
         // QUAND l'app démarre
+        var sortie = Ohce.Palindrome(string.Empty);
+
         // ALORS "Bonjour" est envoyé
+        Assert.StartsWith(Expressions.Bonjour, sortie);
     }
 
     [Fact(DisplayName = "QUAND l'app se ferme " +
-                    "ALORS \"Au revoir\" est envoyé ")]
+                    "ALORS \"{Expressions.AuRevoir}\" est envoyé ")]
     public void FermetureTest()
     {
-        // QUAND l'app se ferme
+        var ohce = new Ohce();
+
+        // QUAND l'app démarre
+        var sortie = Ohce.Palindrome(string.Empty);
+
         // ALORS "Au revoir" est envoyé
+        Assert.EndsWith(Expressions.AuRevoir, sortie);
     }
 }
