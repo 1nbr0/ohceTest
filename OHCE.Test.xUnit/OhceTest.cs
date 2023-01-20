@@ -29,7 +29,8 @@ public class OhceTest
     public void PalindromeTest(string bienDit)
     {
         // ETANT DONNE un utilisateur parlant une <langue>
-        var ohce = new Ohce(new LangueMock { BienDit = bienDit });
+        var ohce = new OhceBuilder().AyantPourFormuleDeBienDit(bienDit).Build();
+
         // QUAND on entre un palindrome
         const string palindrome = "sonos";
         var sortie = ohce.Palindrome(palindrome);
@@ -44,34 +45,34 @@ public class OhceTest
     [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
                           "QUAND l'app démarre " +
                           "ALORS <bonjour> de cette langue est envoyé")]
-    [InlineData("Bonjour")]
-    [InlineData("Hello")]
+    [InlineData(Expressions.Français.Bonjour)]
+    [InlineData(Expressions.English.Bonjour)]
     public void DémarrageTest(string bonjour)
     {
         // ETANT DONNE un utilisateur parlant une <langue>
-        var ohce = new Ohce(new LangueMock { Bonjour = bonjour });
+        var ohce = new OhceBuilder().AyantPourFormuleDeSalutations(bonjour).Build();
 
         // QUAND l'app démarre
         var sortie = ohce.Palindrome(string.Empty);
 
-        // ALORS "Bonjour" est envoyé
+        // ALORS <bonjour> de cette langu est envoyé
         Assert.StartsWith(bonjour, sortie);
     }
 
     [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
                           "QUAND l'app se ferme " +
                           "ALORS <auRevoir> dans cette langue est envoyé")]
-    [InlineData("Au revoir")]
-    [InlineData("Goodbye")]
+    [InlineData(Expressions.English.AuRevoir)]
+    [InlineData(Expressions.Français.AuRevoir)]
     public void FermetureTest(string auRevoir)
     {
         // ETANT DONNE un utilisateur parlant une <langue>
-        var ohce = new Ohce(new LangueMock { AuRevoir = auRevoir });
+        var ohce = new OhceBuilder().AyantPourFormuleDAdieu(auRevoir).Build();
 
         // QUAND l'app démarre
         var sortie = ohce.Palindrome(string.Empty);
 
-        // ALORS "Au revoir" est envoyé
+        // ALORS <auRevoir> dans cette langue est envoyé
         Assert.EndsWith(auRevoir, sortie);
     }
 }
