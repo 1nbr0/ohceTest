@@ -4,27 +4,23 @@ namespace OHCE.Test.xUnit.Utilities.Builders
 {
     internal class OhceBuilder
     {
-        private LangueMock _langue = new LangueMock();
+        private MomentJournee _momentJournee = MomentJournee.Defaut;
+
+        private ILangue _langue = new LangueMock();
 
         public static Ohce Default => new OhceBuilder().Build();
 
-        public Ohce Build() => new Ohce(_langue);
+        public Ohce Build() => new Ohce(_langue, _momentJournee);
 
-        public OhceBuilder AyantPourFormuleDeBienDit(string bienDit)
+        public OhceBuilder AyantPourLangue(ILangue langue)
         {
-            _langue = _langue with { BienDit = bienDit };
+            _langue = langue;
             return this;
         }
 
-        public OhceBuilder AyantPourFormuleDeSalutations(string bonjour)
+        public OhceBuilder AyantPourPériodeDeLaJournée(MomentJournee moment)
         {
-            _langue = _langue with { Bonjour = bonjour };
-            return this;
-        }
-
-        public OhceBuilder AyantPourFormuleDAdieu(string auRevoir)
-        {
-            _langue = _langue with { AuRevoir = auRevoir };
+            _momentJournee = moment;
             return this;
         }
     }

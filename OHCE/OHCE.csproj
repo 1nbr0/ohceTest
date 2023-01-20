@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Langues\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Langues\" />
+  </ItemGroup>
 </Project>

@@ -5,16 +5,18 @@ namespace OHCE;
 public class Ohce
 {
     private readonly ILangue _langue;
+    private readonly MomentJournee _momentJournee;
 
-    public Ohce(ILangue langue)
+    public Ohce(ILangue langue, MomentJournee momentJournee)
     {
         _langue = langue;
+        _momentJournee = momentJournee;
     }
 
     public string Palindrome(string input)
     {
         var stringBuilder =
-            new StringBuilder(_langue.Bonjour);
+            new StringBuilder(_langue.DireBonjour(_momentJournee));
 
         var reversed = new string(
             input.Reverse().ToArray()
