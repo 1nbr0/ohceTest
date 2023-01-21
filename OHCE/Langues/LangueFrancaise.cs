@@ -6,7 +6,12 @@
         public string BienDit => Expressions.Français.BienDit;
 
         /// <inheritdoc />
-        public string DireBonjour(MomentJournee moment) => Expressions.Français.Bonjour;
+        public string DireBonjour(MomentJournee moment)
+        {
+            return moment == MomentJournee.Matin
+                ? Expressions.Français.Bonjour
+                : Expressions.Français.Bonsoir;
+        }
 
         /// <inheritdoc />
         public string AuRevoir => Expressions.Français.AuRevoir;

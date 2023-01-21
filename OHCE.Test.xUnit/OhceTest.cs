@@ -45,7 +45,8 @@ public class OhceTest
 
     private static readonly IEnumerable<ILangue> Langues = new ILangue[]
     {
-        new LangueAnglaise(), new LangueFrancaise()
+        new LangueAnglaise(),
+        new LangueFrancaise()
     };
 
     private static readonly IEnumerable<MomentJournee> Moments = new MomentJournee[]
@@ -59,17 +60,18 @@ public class OhceTest
 
     public static IEnumerable<object[]> LanguesSeules => new CartesianData(Langues);
 
-    public static IEnumerable<object[]> LanguesEtPériodes => new CartesianData(Langues, Moments);
+    public static IEnumerable<object[]> LanguesEtMoments => new CartesianData(Langues, Moments);
 
     [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
-                          "ET que la période de la journée est <période>" +
+                          "ET que le moment de la journée est <moment>" +
                           "QUAND l'app démarre " +
                           "ALORS <bonjour> de cette langue à ce moment est envoyé")]
-    [MemberData(nameof(LanguesEtPériodes))]
+    [MemberData(nameof(LanguesEtMoments))]
     public void DémarrageTest(ILangue langue, MomentJournee moment)
     {
         // ETANT DONNE un utilisateur parlant une <langue>
-        var ohce = new OhceBuilder().AyantPourLangue(langue).AyantPourPériodeDeLaJournée(moment).Build();
+        // ET que le moment de la journée est <moment>
+        var ohce = new OhceBuilder().AyantPourLangue(langue).AyantPourMomentDeLaJournée(moment).Build();
 
         // QUAND l'app démarre
         var sortie = ohce.Palindrome(string.Empty);

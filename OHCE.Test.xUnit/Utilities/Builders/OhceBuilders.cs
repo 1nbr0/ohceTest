@@ -18,7 +18,7 @@ namespace OHCE.Test.xUnit.Utilities.Builders
             return this;
         }
 
-        public OhceBuilder AyantPourPériodeDeLaJournée(MomentJournee moment)
+        public OhceBuilder AyantPourMomentDeLaJournée(MomentJournee moment)
         {
             _momentJournee = moment;
             return this;
