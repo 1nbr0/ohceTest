@@ -71,7 +71,7 @@ public class OhceTest
     {
         // ETANT DONNE un utilisateur parlant une <langue>
         // ET que le moment de la journée est <moment>
-        var ohce = new OhceBuilder().AyantPourLangue(langue).AyantPourMomentDeLaJournée(moment).Build();
+        var ohce = new OhceBuilder().AyantPourLangue(langue).AyantPourMomentDeLaJournee(moment).Build();
 
         // QUAND l'app démarre
         var sortie = ohce.Palindrome(string.Empty);

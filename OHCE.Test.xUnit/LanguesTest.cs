@@ -46,5 +46,23 @@ namespace OHCE.Test.xUnit
             // ALORS <salutationAttendue> de cette langue à ce moment est envoyé avant tout
             Assert.Equal(salutationAttendue, salutation);
         }
+
+        [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue " +
+                          "ET que le moment de la journée est <moment> " +
+                          "QUAND l'app démarre " +
+                          "ALORS <auRevoir> de cette langue à ce moment est envoyé en dernier")]
+        [InlineData(MomentJournee.Matin, Expressions.Français.AuRevoir)]
+        public void DireAuRevoirTestFrancais(MomentJournee moment, string AuRevoirAttendue)
+        {
+            // ETANT DONNE un utilisateur parlant la langue française
+            // ET que le moment de la journée est <moment>
+            var langue = new LangueFrancaise();
+
+            // QUAND l'app démarre
+            var auRevoir = langue.AuRevoirBis(moment);
+
+            // ALORS <salutationAttendue> de cette langue à ce moment est envoyé avant tout
+            Assert.Equal(AuRevoirAttendue, auRevoir);
+        }
     }
 }

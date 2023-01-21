@@ -7,5 +7,8 @@
         public string DireBonjour(MomentJournee moment) => string.Empty;
 
         public string AuRevoir { get; init; } = string.Empty;
+
+        public string AuRevoirBis(MomentJournee moment) => string.Empty;
+
     }
 }

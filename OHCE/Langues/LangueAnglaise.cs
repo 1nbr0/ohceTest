@@ -19,5 +19,8 @@
 
         /// <inheritdoc />
         public string AuRevoir => Expressions.English.AuRevoir;
+
+        /// <inheritdoc />
+        public string AuRevoirBis(MomentJournee moment) => Expressions.English.AuRevoir;
     }
 }
