@@ -32,5 +32,7 @@
                 return Expressions.English.BonneJournee;
             }
         }
+
+        public string InputPalindrome => Expressions.English.InputPalindrome;
     }
 }

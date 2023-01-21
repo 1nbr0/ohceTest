@@ -1,6 +1,10 @@
 ﻿using OHCE;
+using OHCE.Console;
 
-//var ohce = new Ohce();
+var ohce = new Ohce(new SystemLangue(), SystemTimeMomentJournee.MomentActuelle);
 
-//Console.WriteLine(Ohce.Palindrome(Console.ReadLine() ?? string.Empty));
-Console.WriteLine("Hello World");
+Console.WriteLine(ohce.Greet());
+
+Console.WriteLine(ohce.InputPalindrome());
+
+Console.WriteLine(ohce.Palindrome(Console.ReadLine() ?? string.Empty));

@@ -13,6 +13,16 @@ public class Ohce
         _momentJournee = momentJournee;
     }
 
+    public string Greet()
+    {
+        return _langue.DireBonjour(_momentJournee);
+    }
+
+    public string InputPalindrome()
+    {
+        return _langue.InputPalindrome;
+    }
+
     public string Palindrome(string input)
     {
         var stringBuilder =

@@ -33,5 +33,7 @@
                 return Expressions.Français.BonneJournee;
             }
         }
+
+        public string InputPalindrome => Expressions.Français.InputPalindrome;
     }
 }

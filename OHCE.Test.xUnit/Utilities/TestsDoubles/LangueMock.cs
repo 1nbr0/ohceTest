@@ -10,5 +10,7 @@
 
         public string AuRevoirBis(MomentJournee moment) => string.Empty;
 
+        public string InputPalindrome => throw new NotImplementedException();
+
     }
 }
