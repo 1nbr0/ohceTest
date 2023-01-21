@@ -48,7 +48,7 @@ public class OhceTest
         new LangueAnglaise(), new LangueFrancaise()
     };
 
-    private static readonly IEnumerable<MomentJournee> Périodes = new MomentJournee[]
+    private static readonly IEnumerable<MomentJournee> Moments = new MomentJournee[]
     {
         MomentJournee.Matin,
         MomentJournee.AprèsMidi,
@@ -59,7 +59,7 @@ public class OhceTest
 
     public static IEnumerable<object[]> LanguesSeules => new CartesianData(Langues);
 
-    public static IEnumerable<object[]> LanguesEtPériodes => new CartesianData(Langues, Périodes);
+    public static IEnumerable<object[]> LanguesEtPériodes => new CartesianData(Langues, Moments);
 
     [Theory(DisplayName = "ETANT DONNE un utilisateur parlant une langue" +
                           "ET que la période de la journée est <période>" +
