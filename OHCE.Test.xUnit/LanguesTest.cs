@@ -51,8 +51,8 @@ namespace OHCE.Test.xUnit
                           "ET que le moment de la journée est <moment> " +
                           "QUAND l'app démarre " +
                           "ALORS <auRevoir> de cette langue à ce moment est envoyé en dernier")]
-        [InlineData(MomentJournee.Matin, Expressions.Français.AuRevoir)]
-        [InlineData(MomentJournee.AprèsMidi, Expressions.Français.AuRevoir)]
+        [InlineData(MomentJournee.Matin, Expressions.Français.BonneJournee)]
+        [InlineData(MomentJournee.AprèsMidi, Expressions.Français.BonneJournee)]
         [InlineData(MomentJournee.Soir, Expressions.Français.AuRevoir)]
         [InlineData(MomentJournee.Nuit, Expressions.Français.AuRevoir)]
         public void DireAuRevoirTestFrancais(MomentJournee moment, string AuRevoirAttendue)
@@ -72,8 +72,8 @@ namespace OHCE.Test.xUnit
                           "ET que le moment de la journée est <moment> " +
                           "QUAND l'app démarre " +
                           "ALORS <auRevoir> de cette langue à ce moment est envoyé en dernier")]
-        [InlineData(MomentJournee.Matin, Expressions.English.AuRevoir)]
-        [InlineData(MomentJournee.AprèsMidi, Expressions.English.AuRevoir)]
+        [InlineData(MomentJournee.Matin, Expressions.English.BonneJournee)]
+        [InlineData(MomentJournee.AprèsMidi, Expressions.English.BonneJournee)]
         [InlineData(MomentJournee.Soir, Expressions.English.AuRevoir)]
         [InlineData(MomentJournee.Nuit, Expressions.English.AuRevoir)]
         public void DireAuRevoirTestAnglais(MomentJournee moment, string AuRevoirAttendue)

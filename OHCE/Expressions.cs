@@ -13,6 +13,7 @@ namespace OHCE
             public const string BienDit = "Bien dit !";
             public const string Bonjour = "Bonjour :)";
             public const string AuRevoir = "Au revoir...";
+            public const string BonneJournee = "Bonne Journée !";
             public const string Bonsoir = "Bonsoir ;)";
         }
 
@@ -21,6 +22,7 @@ namespace OHCE
             public const string BienDit = "Well said !";
             public const string Bonjour = "Hello :)";
             public const string AuRevoir = "Goodbye...";
+            public const string BonneJournee = "Have a good day... Buuudddyyy !!";
             public const string Bonsoir = "Good evening ;)";
         }
     }

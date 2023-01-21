@@ -22,6 +22,16 @@
         public string AuRevoir => Expressions.Français.AuRevoir;
 
         /// <inheritdoc />
-        public string AuRevoirBis(MomentJournee moment) => Expressions.Français.AuRevoir;
+        public string AuRevoirBis(MomentJournee moment)
+        {
+            if (moment == MomentJournee.Soir || moment == MomentJournee.Nuit)
+            {
+                return Expressions.Français.AuRevoir;
+            }
+            else
+            {
+                return Expressions.Français.BonneJournee;
+            }
+        }
     }
 }
