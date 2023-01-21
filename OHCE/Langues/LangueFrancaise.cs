@@ -8,9 +8,14 @@
         /// <inheritdoc />
         public string DireBonjour(MomentJournee moment)
         {
-            return moment == MomentJournee.Matin
-                ? Expressions.Français.Bonjour
-                : Expressions.Français.Bonsoir;
+            if (moment == MomentJournee.Soir || moment == MomentJournee.Nuit)
+            {
+                return Expressions.Français.Bonsoir;
+            }
+            else
+            {
+                return Expressions.Français.Bonjour;
+            }
         }
 
         /// <inheritdoc />
